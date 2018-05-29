@@ -437,7 +437,7 @@ class Room
      */
     public static function getUserFd(int $userId)
     {
-        return self::getRedis()->zRange('online', $userId, $userId, true);
+        return self::getRedis()->zRangeByScore('online', $userId, $userId, true);
     }
 
     /**
